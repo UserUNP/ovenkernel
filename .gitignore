@@ -1,0 +1,6 @@
+*.a
+*.o
+ovenkernel*
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
