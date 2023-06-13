@@ -18,18 +18,24 @@ SECTION .bss
 
 SECTION .text
 	global _start:function (_start.end - _start) ; epic arithmetic
-	;        name:type     (       size       )
+	;        name:type     (        size       )
 	extern _bootstrap_main
 	extern _bootstrap_panic
+	extern _bootstrap_exitok
 
+	_panic:
+		call _bootstrap_panic
+		jmp hltjmp
+	_exitok:
+		call _bootstrap_exitok
+		jmp hltjmp
 	hltjmp: hlt
-	_panic: call _bootstrap_panic
 	_start:
 		cli ; no more interrupts
 		mov esp, stack_top ; move stack pointer
 		call _bootstrap_main
 		cmp eax, 0
+		je _exitok
 		jl _panic
 		jg _panic
-		jmp hltjmp
 	.end: ; (for calculating size)

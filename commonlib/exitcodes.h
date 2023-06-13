@@ -1,2 +1,2 @@
 #define EXIT_OK 0
-#define EXIT_NO 1
+#define EXIT_PANIC 1

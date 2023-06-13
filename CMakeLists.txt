@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.26)
 
 project(ovenkernel)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m32 -ffreestanding -nostdlib -O2")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m32 -ffreestanding -nostdlib")
 set(CMAKE_ASM_NASM_OBJECT_FORMAT "elf32")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -ffreestanding -nostdlib -O2 -T ${CMAKE_BINARY_DIR}/linker.ld")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -ffreestanding -nostdlib -O3 -T ${CMAKE_BINARY_DIR}/linker.ld")
 enable_language(C ASM_NASM)
 
 add_library(bootstrap STATIC
@@ -14,6 +14,7 @@ add_library(bootstrap STATIC
 
 add_library(commonlib STATIC
 	commonlib/terminal.c
+	commonlib/strutils.c
 )
 
 add_executable(${CMAKE_PROJECT_NAME}

@@ -10,6 +10,8 @@
 size_t _bootstrap_main(void)
 {
 	terminal_init();
+	terminal_clear();
+
 	terminal_write("Initializing kernel\n");
 	terminal_write("bruhmoner\n");
 	return EXIT_OK;
@@ -18,5 +20,10 @@ size_t _bootstrap_main(void)
 
 void _bootstrap_panic(void)
 {
-	
+	terminal_center_write("(kernel panic)\n");
+}
+
+void _bootstrap_exitok(void)
+{
+	terminal_center_write("(kernel exit ok)\n");
 }
