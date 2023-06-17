@@ -1,8 +1,10 @@
 *.a
 *.o
-.ccls-cache
 ovenkernel*
+.ccls-cache
+.cmake
 CMakeFiles/
 CMakeCache.txt
+compile_commands.json
 cmake_install.cmake
 Makefile

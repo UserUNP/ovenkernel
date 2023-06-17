@@ -1,6 +1,6 @@
-#include "./terminal.h"
-#include "./strutils.h"
-#include "./vgacolor.h"
+#include <terminal.h>
+#include <strutils.h>
+#include <vgacolor.h>
 
 size_t terminal_row;
 size_t terminal_column;

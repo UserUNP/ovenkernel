@@ -1,4 +1,4 @@
-#include <stddef.h>
+#include <typedefs.h>
 
 size_t strlen(const char* str);
 char *strcat(char *dest, const char* src);
