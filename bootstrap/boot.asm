@@ -17,8 +17,7 @@ SECTION .bss
 	stack_top:
 
 SECTION .text
-	global _start:function (_start.end - _start) ; epic arithmetic
-	;        name:type     (        size       )
+	global _start:function (_start.end - _start)
 	extern _bootstrap_main
 	extern _bootstrap_panic
 	extern _bootstrap_exitok

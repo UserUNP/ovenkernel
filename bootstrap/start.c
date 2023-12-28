@@ -5,14 +5,14 @@
 #include <typedefs.h>
 
 #include <exitcodes.h>
-#include <terminal.h>
+#include <console.h>
+#include <vgacolor.h>
 #include <mem.h>
 
 size_t _bootstrap_main(void)
 {
 	terminal_init();
-	memcpy(VGA_VIDMEM, (void *)0, VGA_WIDTH*VGA_HEIGHT); // memcpy test
-	terminal_clear(); // comment out to see memcpy test
+	terminal_clear();
 
 	terminal_write("Initializing kernel\n");
 	terminal_write("bruhmoner\n");
@@ -22,6 +22,7 @@ size_t _bootstrap_main(void)
 
 void _bootstrap_panic(void)
 {
+	terminal_setcolor(vga_entry_color(VGA_COLOR_BLACK, VGA_COLOR_RED));
 	terminal_center_write("(kernel panic)\n");
 }
 
