@@ -10,8 +10,8 @@ enable_language(C ASM_NASM)
 include_directories(${CMAKE_BINARY_DIR}/commonlib)
 
 add_library(commonlib STATIC
-	commonlib/terminal.c
 	commonlib/mem.c
+	commonlib/console.c
 	commonlib/strutils.c
 	commonlib/error.c
 )

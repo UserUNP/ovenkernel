@@ -11,22 +11,22 @@
 
 size_t _bootstrap_main(void)
 {
-	terminal_init();
-	terminal_clear();
+	console_init();
+	console_clear();
 
-	terminal_write("Initializing kernel\n");
-	terminal_write("bruhmoner\n");
+	console_write("Initializing kernel\n");
+	console_write("bruhmoner\n");
 	return EXIT_OK;
 }
 
 
 void _bootstrap_panic(void)
 {
-	terminal_setcolor(vga_entry_color(VGA_COLOR_BLACK, VGA_COLOR_RED));
-	terminal_center_write("(kernel panic)\n");
+	console_setcolor(vga_entry_color(VGA_COLOR_BLACK, VGA_COLOR_RED));
+	console_write("(kernel panic)\n");
 }
 
 void _bootstrap_exitok(void)
 {
-	terminal_center_write("(kernel exit ok)\n");
+	console_center_write("(kernel exit ok)\n");
 }
